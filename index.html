@@ -290,38 +290,12 @@
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(18,28,45,.05);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-thumb {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
     }
 
     .gallery-card img {
       aspect-ratio: 4 / 3;
       object-fit: cover;
       width: 100%;
-      transition: transform .35s ease;
-    }
-
-    .gallery-card:hover img {
-      transform: scale(1.03);
-    }
-
-    .gallery-badge {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      background: rgba(15,17,21,.78);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: .82rem;
-      font-weight: 700;
-      backdrop-filter: blur(6px);
     }
 
     .gallery-card .meta {
@@ -335,124 +309,9 @@
     }
 
     .gallery-card p {
-      margin: 0 0 14px;
+      margin: 0;
       color: #627081;
       font-size: .95rem;
-    }
-
-    .gallery-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      color: var(--accent-dark);
-      cursor: pointer;
-    }
-
-    .gallery-link:hover {
-      color: var(--accent);
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(10,12,16,.82);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 3000;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox-panel {
-      width: min(1100px, 100%);
-      max-height: 90vh;
-      overflow: auto;
-      background: #111722;
-      color: #fff;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .lightbox-top {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 0;
-    }
-
-    .lightbox-image-wrap {
-      background: #0b0f16;
-    }
-
-    .lightbox-main-image {
-      width: 100%;
-      height: 100%;
-      max-height: 68vh;
-      object-fit: contain;
-      background: #0b0f16;
-    }
-
-    .lightbox-info {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .lightbox-info h3 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    .lightbox-info p {
-      margin: 0;
-      color: #d4dbe5;
-    }
-
-    .lightbox-close {
-      align-self: flex-start;
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 10px;
-      padding: 10px 12px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .lightbox-close:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .thumb-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 10px;
-      padding: 16px;
-      background: #161c27;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .thumb-strip img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      opacity: .82;
-    }
-
-    .thumb-strip img.active,
-    .thumb-strip img:hover {
-      border-color: var(--accent);
-      opacity: 1;
     }
 
     .quote-wrap {
@@ -550,6 +409,21 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .services-grid,
+      .gallery-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        padding: 72px 0 64px;
+      }
+    }
 
       .nav-links {
         gap: 14px;
@@ -746,152 +620,94 @@
 
         <div class="gallery-grid">
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('euro-kitchen-1')">
-              <img src="images/projects/euro-kitchen-1/cover.jpg" alt="Euro style kitchen cabinets" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/euro-kitchen-1/cover.jpg" alt="Euro style kitchen cabinets" />
             <div class="meta">
               <h3>Euro Style Kitchen Cabinets</h3>
               <p>Modern euro-style kitchen with a clean, high-end finish and sharp lines.</p>
-              <span class="gallery-link" onclick="openProject('euro-kitchen-1')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('china-blue-kitchen')">
-              <img src="images/projects/china-blue-kitchen/cover.jpg" alt="China blue kitchen cabinets" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/china-blue-kitchen/cover.jpg" alt="China blue kitchen cabinets" />
             <div class="meta">
               <h3>China Blue Kitchen</h3>
               <p>Bold shaker-style cabinets in china blue with a strong custom look.</p>
-              <span class="gallery-link" onclick="openProject('china-blue-kitchen')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('shaker-crown-kitchen')">
-              <img src="images/projects/shaker-crown-kitchen/cover.jpg" alt="Shaker style kitchen with crown molding" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/shaker-crown-kitchen/cover.jpg" alt="Shaker style kitchen with crown molding" />
             <div class="meta">
               <h3>Shaker Style Kitchen</h3>
               <p>Shaker style cabinets finished with crown molding for a more classic feel.</p>
-              <span class="gallery-link" onclick="openProject('shaker-crown-kitchen')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('lower-cabinets-pvc')">
-              <img src="images/projects/lower-cabinets-pvc/cover.jpg" alt="Lower kitchen cabinets PVC board no handles" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/lower-cabinets-pvc/cover.jpg" alt="Lower kitchen cabinets PVC board no handles" />
             <div class="meta">
               <h3>Lower Kitchen Cabinets</h3>
               <p>PVC lower cabinets with a cleaner handle-free look and modern profile.</p>
-              <span class="gallery-link" onclick="openProject('lower-cabinets-pvc')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('charcoal-grey-kitchen')">
-              <img src="images/projects/charcoal-grey-kitchen/cover.jpg" alt="Custom made kitchen charcoal grey" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/charcoal-grey-kitchen/cover.jpg" alt="Custom made kitchen charcoal grey" />
             <div class="meta">
               <h3>Custom Made Kitchen</h3>
               <p>Custom charcoal grey kitchen with practical storage and a sleek finish.</p>
-              <span class="gallery-link" onclick="openProject('charcoal-grey-kitchen')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('built-in-closet-white')">
-              <img src="images/projects/built-in-closet-white/cover.jpg" alt="Built in closet floor to ceiling" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/built-in-closet-white/cover.jpg" alt="Built in closet floor to ceiling" />
             <div class="meta">
               <h3>Built-In Closet</h3>
               <p>Floor-to-ceiling built-in closet designed for neat storage and everyday use.</p>
-              <span class="gallery-link" onclick="openProject('built-in-closet-white')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('open-concept-closet')">
-              <img src="images/projects/open-concept-closet/cover.jpg" alt="Open concept closet floor to ceiling" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/open-concept-closet/cover.jpg" alt="Open concept closet floor to ceiling" />
             <div class="meta">
               <h3>Open Concept Closet</h3>
               <p>Open floor-to-ceiling closet layout with shelves, rails, and flexible storage.</p>
-              <span class="gallery-link" onclick="openProject('open-concept-closet')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('walk-in-gloss-white')">
-              <img src="images/projects/walk-in-gloss-white/cover.jpg" alt="Walk in closet gloss white" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/walk-in-gloss-white/cover.jpg" alt="Walk in closet gloss white" />
             <div class="meta">
               <h3>Walk-In Closet</h3>
               <p>Sherwin-Williams gloss white walk-in closet with a bright, polished finish.</p>
-              <span class="gallery-link" onclick="openProject('walk-in-gloss-white')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('walk-in-gun-metal')">
-              <img src="images/projects/walk-in-gun-metal/cover.jpg" alt="Walk in closet gun metal grey" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/walk-in-gun-metal/cover.jpg" alt="Walk in closet gun metal grey" />
             <div class="meta">
               <h3>Walk-In Closet</h3>
               <p>Gun metal grey walk-in closet with drawers, shelves, and a bold modern look.</p>
-              <span class="gallery-link" onclick="openProject('walk-in-gun-metal')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('euro-quartz-island')">
-              <img src="images/projects/euro-quartz-island/cover.jpg" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/euro-quartz-island/cover.jpg" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" />
             <div class="meta">
               <h3>Euro Quartz Island Kitchen</h3>
               <p>Euro-style cabinets with quartz countertops and a standout waterfall island.</p>
-              <span class="gallery-link" onclick="openProject('euro-quartz-island')">See more photos</span>
             </div>
           </article>
 
           <article class="gallery-card">
-            <div class="gallery-thumb" onclick="openProject('vanity-home-improvement')">
-              <img src="images/projects/vanity-home-improvement/cover.jpg" alt="Vanity home improvement" />
-              <span class="gallery-badge">View project</span>
-            </div>
+            <img src="images/projects/vanity-home-improvement/cover.jpg" alt="Vanity home improvement" />
             <div class="meta">
               <h3>Vanity</h3>
               <p>Custom vanity home-improvement piece with a clean finish and simple style.</p>
-              <span class="gallery-link" onclick="openProject('vanity-home-improvement')">See more photos</span>
             </div>
           </article>
         </div>
       </div>
-    </section>
-
-    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-      <div class="lightbox-panel">
-        <div class="lightbox-top">
-          <div class="lightbox-image-wrap">
-            <img id="lightboxMainImage" class="lightbox-main-image" src="" alt="Project image" />
-          </div>
-          <div class="lightbox-info">
-            <button class="lightbox-close" type="button" onclick="closeLightbox()">Close</button>
-            <h3 id="lightboxTitle"></h3>
-            <p id="lightboxDescription"></p>
-          </div>
-        </div>
         <div class="thumb-strip" id="thumbStrip"></div>
       </div>
     </div>
@@ -1025,153 +841,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const projectData = {
-      'euro-kitchen-1': {
-        title: 'Euro Style Kitchen Cabinets',
-        description: 'Modern euro-style kitchen with a clean, high-end finish and sharp lines.',
-        images: [
-          'images/projects/euro-kitchen-1/cover.jpg',
-          'images/projects/euro-kitchen-1/euro-kitchen-1-01.jpg',
-          'images/projects/euro-kitchen-1/euro-kitchen-1-02.jpg',
-          'images/projects/euro-kitchen-1/euro-kitchen-1-03.jpg'
-        ]
-      },
-      'china-blue-kitchen': {
-        title: 'China Blue Kitchen',
-        description: 'Bold shaker-style cabinets in china blue with a strong custom look.',
-        images: [
-          'images/projects/china-blue-kitchen/cover.jpg',
-          'images/projects/china-blue-kitchen/china-blue-kitchen-01.jpg',
-          'images/projects/china-blue-kitchen/china-blue-kitchen-02.jpg',
-          'images/projects/china-blue-kitchen/china-blue-kitchen-03.jpg'
-        ]
-      },
-      'shaker-crown-kitchen': {
-        title: 'Shaker Style Kitchen',
-        description: 'Shaker style cabinets finished with crown molding for a more classic feel.',
-        images: [
-          'images/projects/shaker-crown-kitchen/cover.jpg',
-          'images/projects/shaker-crown-kitchen/shaker-crown-kitchen-01.jpg',
-          'images/projects/shaker-crown-kitchen/shaker-crown-kitchen-02.jpg'
-        ]
-      },
-      'lower-cabinets-pvc': {
-        title: 'Lower Kitchen Cabinets',
-        description: 'PVC lower cabinets with a cleaner handle-free look and modern profile.',
-        images: [
-          'images/projects/lower-cabinets-pvc/cover.jpg',
-          'images/projects/lower-cabinets-pvc/lower-cabinets-pvc-01.jpg',
-          'images/projects/lower-cabinets-pvc/lower-cabinets-pvc-02.jpg'
-        ]
-      },
-      'charcoal-grey-kitchen': {
-        title: 'Custom Made Kitchen',
-        description: 'Custom charcoal grey kitchen with practical storage and a sleek finish.',
-        images: [
-          'images/projects/charcoal-grey-kitchen/cover.jpg',
-          'images/projects/charcoal-grey-kitchen/charcoal-grey-kitchen-01.jpg',
-          'images/projects/charcoal-grey-kitchen/charcoal-grey-kitchen-02.jpg'
-        ]
-      },
-      'built-in-closet-white': {
-        title: 'Built-In Closet',
-        description: 'Floor-to-ceiling built-in closet designed for neat storage and everyday use.',
-        images: [
-          'images/projects/built-in-closet-white/cover.jpg',
-          'images/projects/built-in-closet-white/built-in-closet-white-01.jpg',
-          'images/projects/built-in-closet-white/built-in-closet-white-02.jpg'
-        ]
-      },
-      'open-concept-closet': {
-        title: 'Open Concept Closet',
-        description: 'Open floor-to-ceiling closet layout with shelves, rails, and flexible storage.',
-        images: [
-          'images/projects/open-concept-closet/cover.jpg',
-          'images/projects/open-concept-closet/open-concept-closet-01.jpg',
-          'images/projects/open-concept-closet/open-concept-closet-02.jpg'
-        ]
-      },
-      'walk-in-gloss-white': {
-        title: 'Walk-In Closet',
-        description: 'Sherwin-Williams gloss white walk-in closet with a bright, polished finish.',
-        images: [
-          'images/projects/walk-in-gloss-white/cover.jpg',
-          'images/projects/walk-in-gloss-white/walk-in-gloss-white-01.jpg',
-          'images/projects/walk-in-gloss-white/walk-in-gloss-white-02.jpg'
-        ]
-      },
-      'walk-in-gun-metal': {
-        title: 'Walk-In Closet',
-        description: 'Gun metal grey walk-in closet with drawers, shelves, and a bold modern look.',
-        images: [
-          'images/projects/walk-in-gun-metal/cover.jpg',
-          'images/projects/walk-in-gun-metal/walk-in-gun-metal-01.jpg',
-          'images/projects/walk-in-gun-metal/walk-in-gun-metal-02.jpg'
-        ]
-      },
-      'euro-quartz-island': {
-        title: 'Euro Quartz Island Kitchen',
-        description: 'Euro-style cabinets with quartz countertops and a standout waterfall island.',
-        images: [
-          'images/projects/euro-quartz-island/cover.jpg',
-          'images/projects/euro-quartz-island/euro-quartz-island-01.jpg',
-          'images/projects/euro-quartz-island/euro-quartz-island-02.jpg',
-          'images/projects/euro-quartz-island/euro-quartz-island-03.jpg'
-        ]
-      },
-      'vanity-home-improvement': {
-        title: 'Vanity',
-        description: 'Custom vanity home-improvement piece with a clean finish and simple style.',
-        images: [
-          'images/projects/vanity-home-improvement/cover.jpg',
-          'images/projects/vanity-home-improvement/vanity-home-improvement-01.jpg',
-          'images/projects/vanity-home-improvement/vanity-home-improvement-02.jpg',
-          'images/projects/vanity-home-improvement/vanity-home-improvement-03.jpg'
-        ]
-      }
-    };
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxMainImage = document.getElementById('lightboxMainImage');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxDescription = document.getElementById('lightboxDescription');
-    const thumbStrip = document.getElementById('thumbStrip');
-
-    function openProject(projectKey) {
-      const project = projectData[projectKey];
-      if (!project) return;
-
-      lightbox.classList.add('open');
-      lightboxTitle.textContent = project.title;
-      lightboxDescription.textContent = project.description;
-      lightboxMainImage.src = project.images[0];
-
-      thumbStrip.innerHTML = '';
-      project.images.forEach((src, index) => {
-        const thumb = document.createElement('img');
-        thumb.src = src;
-        thumb.alt = `${project.title} photo ${index + 1}`;
-        if (index === 0) thumb.classList.add('active');
-        thumb.onclick = () => {
-          lightboxMainImage.src = src;
-          document.querySelectorAll('.thumb-strip img').forEach(img => img.classList.remove('active'));
-          thumb.classList.add('active');
-        };
-        thumbStrip.appendChild(thumb);
-      });
-    }
-
-    function closeLightbox(event) {
-      if (event && event.target !== lightbox) return;
-      lightbox.classList.remove('open');
-    }
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        lightbox.classList.remove('open');
-      }
-    });
   </script>
 </body>
 </html>
