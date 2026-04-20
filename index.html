@@ -3,709 +3,773 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Cabinets & Closets</title>
+  <title>Wally Woodworking | Custom Woodwork in Trinidad</title>
   <style>
     :root {
       --bg: #0f1115;
-      --panel: #171a21;
-      --panel-2: #1f2430;
-      --text: #f5f7fb;
+      --panel: #171a20;
+      --panel-2: #1e232c;
+      --text: #f5f7fa;
       --muted: #b8c0cc;
-      --line: #2a3140;
-      --accent: #d9e3f0;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius: 22px;
-      --max: 1200px;
+      --accent: #f28c28;
+      --accent-dark: #cf6f14;
+      --line: #2a303a;
+      --white: #ffffff;
+      --shadow: 0 16px 40px rgba(0,0,0,.25);
+      --radius: 18px;
+      --max: 1180px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #0f1115 0%, #121722 100%);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f8;
+      color: #1d232b;
+      line-height: 1.6;
     }
 
+    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; height: auto; }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .nav {
+    .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(15,17,21,.75);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(15,17,21,.92);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .nav-inner {
-      min-height: 72px;
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      min-height: 76px;
     }
 
     .brand {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: .03em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #000;
+      border: 2px solid rgba(255,255,255,.12);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: .3px;
+    }
+
+    .brand-text span {
+      color: #d1d7e0;
+      font-size: .88rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 22px;
       flex-wrap: wrap;
-      color: var(--muted);
-      font-size: .96rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #eef2f7;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      background:
+        linear-gradient(rgba(10,12,16,.72), rgba(10,12,16,.72)),
+        url('images/featured/hero-kitchen.jpg') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-inner {
+      padding: 90px 0 84px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      max-width: 10ch;
+    }
+
+    .hero-copy p {
+      margin: 0 0 24px;
+      color: #d9e0ea;
+      max-width: 62ch;
+      font-size: 1.04rem;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .hero-card p {
+      margin: 0 0 18px;
+      color: #dde4ee;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 46px;
       padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      color: #111;
+      border-radius: 12px;
       font-weight: 700;
-      box-shadow: var(--shadow);
+      border: 1px solid transparent;
+      transition: .2s ease;
     }
 
-    .btn.secondary {
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-primary:hover { background: #ff9b39; transform: translateY(-1px); }
+
+    .btn-secondary {
       background: transparent;
-      color: var(--text);
-      box-shadow: none;
+      color: var(--white);
+      border-color: rgba(255,255,255,.24);
     }
 
-    .hero {
-      padding: 72px 0 42px;
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    section {
+      padding: 70px 0;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-card,
-    .card,
-    .gallery-card,
-    .contact-box,
-    .folder-box {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy {
-      padding: 34px;
+    .section-head {
+      margin-bottom: 26px;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      color: var(--accent);
-      font-size: .85rem;
+      color: var(--accent-dark);
       font-weight: 700;
-      letter-spacing: .04em;
       text-transform: uppercase;
+      letter-spacing: .09em;
+      font-size: .78rem;
+      margin-bottom: 10px;
     }
 
-    h1, h2, h3 { margin: 0; }
-
-    h1 {
-      font-size: clamp(2.2rem, 4vw, 4.6rem);
-      line-height: 1.02;
-      margin-bottom: 16px;
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 2.4vw, 2.5rem);
+      line-height: 1.1;
+      color: #111722;
     }
 
-    .lead {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 60ch;
-      margin-bottom: 24px;
+    .section-head p {
+      margin: 0;
+      color: #5e6978;
+      max-width: 70ch;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #e7ebf0;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(18,28,45,.06);
     }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
     }
 
     .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.06);
+      background: #111722;
+      color: #fff;
+      border-radius: 16px;
+      padding: 18px;
     }
 
     .stat strong {
       display: block;
-      font-size: 1.25rem;
-      margin-bottom: 4px;
+      font-size: 1.7rem;
+      margin-bottom: 6px;
     }
 
-    .stat span {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .hero-card {
-      overflow: hidden;
-      min-height: 100%;
-    }
-
-    .hero-card img {
-      height: 100%;
-      object-fit: cover;
-      min-height: 420px;
-    }
-
-    section {
-      padding: 28px 0 54px;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 20px;
-    }
-
-    .section-head p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      max-width: 65ch;
-    }
-
-    .services,
-    .contact-grid,
-    .folders {
+    .services-grid,
+    .gallery-grid {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .services {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
+    .service-card {
+      background: var(--white);
+      border: 1px solid #e7ebf0;
+      border-radius: var(--radius);
       padding: 22px;
+      box-shadow: 0 10px 30px rgba(18,28,45,.05);
     }
 
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin: 0;
-      font-size: .95rem;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .gallery-card {
-      overflow: hidden;
-    }
-
-    .gallery-card .thumb {
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: #0e0f13;
-    }
-
-    .gallery-card .thumb img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .35s ease;
-    }
-
-    .gallery-card:hover .thumb img {
-      transform: scale(1.04);
-    }
-
-    .gallery-body {
-      padding: 20px;
-    }
-
-    .gallery-body h3 {
-      margin-bottom: 8px;
+    .service-card h3 {
+      margin: 0 0 8px;
       font-size: 1.15rem;
+      color: #121926;
     }
 
-    .gallery-body p {
+    .service-card p {
       margin: 0 0 14px;
-      color: var(--muted);
+      color: #617082;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 7px 10px;
+    .price-tag {
+      display: inline-block;
+      background: #fff4e9;
+      color: #9a530b;
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      color: var(--accent);
-      font-size: .82rem;
-    }
-
-    .folders {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .folder-box {
-      padding: 22px;
-    }
-
-    .folder-box h3 {
-      margin-bottom: 10px;
-    }
-
-    .code {
-      margin: 0;
-      padding: 14px;
-      border-radius: 14px;
-      background: #0e1118;
-      border: 1px solid var(--line);
-      color: #d7deea;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      white-space: pre-wrap;
-      word-break: break-word;
+      font-weight: 700;
       font-size: .92rem;
     }
 
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
+    .gallery-card {
+      background: var(--white);
+      border: 1px solid #e7ebf0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(18,28,45,.05);
+      display: flex;
+      flex-direction: column;
     }
 
-    .contact-box {
-      padding: 24px;
+    .gallery-card img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      width: 100%;
     }
 
-    .contact-box p {
-      color: var(--muted);
-      margin: 10px 0 0;
+    .gallery-card .meta {
+      padding: 16px;
     }
 
-    .footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-      padding: 22px 0 40px;
+    .gallery-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.04rem;
+      color: #121926;
+    }
+
+    .gallery-card p {
+      margin: 0;
+      color: #627081;
       font-size: .95rem;
     }
 
-    @media (max-width: 960px) {
-      .hero-grid,
-      .services,
-      .projects,
-      .contact-grid,
-      .folders {
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      background: #111722;
+      color: #fff;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: #dde4ef;
+      word-break: break-word;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      font-weight: 700;
+      color: #1b2430;
+      font-size: .94rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-top: 6px;
+      border: 1px solid #d9e0e8;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea { min-height: 140px; resize: vertical; }
+
+    .footer {
+      background: #0f1115;
+      color: #dce3ec;
+      padding: 28px 0;
+      margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .note {
+      font-size: .92rem;
+      color: #667383;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .about-grid,
+      .quote-wrap {
         grid-template-columns: 1fr;
       }
 
-      .hero-card img {
-        min-height: 320px;
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 720px) {
-      .nav-inner {
+    @media (max-width: 680px) {
+      .nav {
         padding: 12px 0;
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
       }
 
+      .nav-links {
+        gap: 14px;
+      }
+
+      .services-grid,
+      .gallery-grid,
       .stats {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy,
-      .card,
-      .gallery-body,
-      .contact-box,
-      .folder-box {
-        padding: 18px;
+      .hero-inner {
+        padding: 72px 0 64px;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">Your Cabinet & Closet Brand</div>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#folders">Image Setup</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="images/logo/wally-logo.jpg" alt="Wally Woodworking logo" />
+        <div class="brand-text">
+          <strong>Wally Woodworking</strong>
+          <span>Custom woodwork in Trinidad & Tobago</span>
+        </div>
+      </a>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">Custom cabinets • closets • vanities</div>
-        <h1>Clean custom work for kitchens, closets, and home upgrades.</h1>
-        <p class="lead">
-          Modern euro-style kitchens, shaker cabinets, walk-in closets, built-in wardrobes, and vanity units made to fit your space. This homepage is already upgraded to feel cleaner, more premium, and easier for customers to browse.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#work">View Projects</a>
-          <a class="btn secondary" href="#contact">Get a Quote</a>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>Kitchens</strong><span>Shaker, euro-style, quartz tops, waterfall islands</span></div>
-          <div class="stat"><strong>Closets</strong><span>Built-in wardrobes, walk-ins, floor-to-ceiling storage</span></div>
-          <div class="stat"><strong>Finishes</strong><span>Gloss white, gun metal grey, charcoal, blue, and more</span></div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <img src="images/featured/hero-kitchen.jpg" alt="Modern custom kitchen cabinetry" />
-      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#quote">Get a Quote</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>What you build</h2>
-          <p>Use these cards on the homepage so visitors instantly understand the kinds of work you do.</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Quality custom woodwork in Trinidad</h1>
+          <p>
+            Custom kitchens, closets, vanities, cabinets, furniture, and repairs made to fit your space,
+            your style, and your budget.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#quote">Request a Quote</a>
+            <a class="btn btn-secondary" href="#gallery">View Our Work</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Built with care. Made to last.</h3>
+          <p>
+            Over 20 years of woodworking experience with a strong focus on quality finishes,
+            practical storage, and customer satisfaction.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/18683509332" target="_blank" rel="noopener">WhatsApp Us</a>
+            <a class="btn btn-secondary" href="mailto:wallywoodworkingandhomedesign@gmail.com">Email Us</a>
+          </div>
         </div>
       </div>
-      <div class="services">
-        <div class="card">
-          <h3>Custom Kitchens</h3>
-          <p>Shaker and euro-style layouts, wall units, base cabinets, islands, pantry towers, and appliance framing.</p>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">About Us</span>
+          <h2>Trusted craftsmanship with a personal touch</h2>
+          <p>
+            Wally Woodworking has been serving customers for over 20 years, creating custom-made furniture,
+            cabinetry, closets, vanities, and repair work across Trinidad and Tobago. Every project is built
+            with attention to detail, durable materials, and a finish that fits the customer's vision.
+          </p>
         </div>
-        <div class="card">
-          <h3>Closets & Wardrobes</h3>
-          <p>Walk-in closets, built-in wardrobes, open shelving, drawers, hanging space, and floor-to-ceiling storage.</p>
-        </div>
-        <div class="card">
-          <h3>Vanities</h3>
-          <p>Bathroom vanities and compact storage cabinets in custom colors and finishes.</p>
-        </div>
-        <div class="card">
-          <h3>Home Improvements</h3>
-          <p>Storage upgrades, built-ins, cabinetry for difficult spaces, and custom interior organization.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="work">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Featured projects</h2>
-          <p>Each project card links to a folder of images. Replace the sample covers below with your best photo from each set.</p>
-        </div>
-      </div>
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              We do more than make furniture. We help bring ideas to life with clean workmanship, practical
+              design, and reliable service. From modern kitchen cabinets to classic shaker-style pieces and
+              custom-built closets, every job is made to suit the space and the person using it.
+            </p>
+            <p>
+              Our goal is simple: quality work, honest service, and pieces that look good and hold up over time.
+            </p>
+          </div>
 
-      <div class="projects">
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/euro-kitchen-1/cover.jpg" alt="Euro style kitchen cabinets" /></div>
-          <div class="gallery-body">
-            <h3>Euro Style Kitchen Cabinets</h3>
-            <p>Timeless modern layout with clean lines, integrated look, and quartz detail.</p>
-            <div class="tags">
-              <span class="tag">Euro style</span>
-              <span class="tag">Timeless</span>
-              <span class="tag">Kitchen</span>
+          <div class="stats">
+            <div class="stat">
+              <strong>20+ years</strong>
+              <span>of woodworking experience</span>
+            </div>
+            <div class="stat">
+              <strong>Custom builds</strong>
+              <span>made to fit your space</span>
+            </div>
+            <div class="stat">
+              <strong>Trinidad & Tobago</strong>
+              <span>local service available</span>
+            </div>
+            <div class="stat">
+              <strong>Repairs too</strong>
+              <span>not just new projects</span>
             </div>
           </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/china-blue-kitchen/cover.jpg" alt="China blue kitchen cabinets" /></div>
-          <div class="gallery-body">
-            <h3>China Blue Kitchen</h3>
-            <p>Classic cabinet doors with bold blue finish and silver hardware.</p>
-            <div class="tags">
-              <span class="tag">China blue</span>
-              <span class="tag">Shaker doors</span>
-              <span class="tag">Custom made</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/shaker-crown-kitchen/cover.jpg" alt="Shaker style kitchen with crown molding" /></div>
-          <div class="gallery-body">
-            <h3>Shaker Kitchen with Crown Molding</h3>
-            <p>Soft grey finish with crown detail, tall pantry storage, drawers, and upper wall cabinets.</p>
-            <div class="tags">
-              <span class="tag">Shaker style</span>
-              <span class="tag">Crown molding</span>
-              <span class="tag">Kitchen</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/lower-cabinets-pvc/cover.jpg" alt="Lower kitchen cabinets with no handles" /></div>
-          <div class="gallery-body">
-            <h3>Lower Kitchen Cabinets</h3>
-            <p>PVC board lower units with no handles for a sleek, minimal finish.</p>
-            <div class="tags">
-              <span class="tag">PVC board</span>
-              <span class="tag">No handles</span>
-              <span class="tag">Modern</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/charcoal-grey-kitchen/cover.jpg" alt="Charcoal grey custom kitchen" /></div>
-          <div class="gallery-body">
-            <h3>Custom Kitchen in Charcoal Grey</h3>
-            <p>Dark counters paired with custom charcoal grey cabinetry in an L-shaped layout.</p>
-            <div class="tags">
-              <span class="tag">Charcoal grey</span>
-              <span class="tag">Custom kitchen</span>
-              <span class="tag">L-shape</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/built-in-closet-white/cover.jpg" alt="Built in closet floor to ceiling" /></div>
-          <div class="gallery-body">
-            <h3>Built-In Closet</h3>
-            <p>Floor-to-ceiling white built-in with clean slab doors and black hardware.</p>
-            <div class="tags">
-              <span class="tag">Built-in closet</span>
-              <span class="tag">Floor to ceiling</span>
-              <span class="tag">White finish</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/open-concept-closet/cover.jpg" alt="Open concept closet floor to ceiling" /></div>
-          <div class="gallery-body">
-            <h3>Open Concept Closet</h3>
-            <p>Open storage system with hanging sections, cubbies, and top storage.</p>
-            <div class="tags">
-              <span class="tag">Open concept</span>
-              <span class="tag">Closet</span>
-              <span class="tag">Floor to ceiling</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/walk-in-gloss-white/cover.jpg" alt="Walk in closet Sherwin Williams gloss white" /></div>
-          <div class="gallery-body">
-            <h3>Walk-In Closet — Gloss White</h3>
-            <p>Bright walk-in design in Sherwin Williams gloss white with shelving and drawer sections.</p>
-            <div class="tags">
-              <span class="tag">Walk-in closet</span>
-              <span class="tag">Gloss white</span>
-              <span class="tag">Premium finish</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/walk-in-gun-metal/cover.jpg" alt="Walk in closet gun metal grey" /></div>
-          <div class="gallery-body">
-            <h3>Walk-In Closet — Gun Metal Grey</h3>
-            <p>Dark modern walk-in with shelving, drawers, and open hanging sections.</p>
-            <div class="tags">
-              <span class="tag">Gun metal grey</span>
-              <span class="tag">Walk-in closet</span>
-              <span class="tag">Modern</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/euro-quartz-island/cover.jpg" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" /></div>
-          <div class="gallery-body">
-            <h3>Euro Kitchen with Waterfall Island</h3>
-            <p>Benjamin Moore satin paint, quartz counters, waterfall island, and soft neutral palette.</p>
-            <div class="tags">
-              <span class="tag">Quartz countertop</span>
-              <span class="tag">Waterfall island</span>
-              <span class="tag">Benjamin Moore satin</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/vanity-home-improvement/cover.jpg" alt="Vanity home improvement" /></div>
-          <div class="gallery-body">
-            <h3>Vanity / Home Improvement</h3>
-            <p>Compact painted vanity unit showing the build process and finished door style.</p>
-            <div class="tags">
-              <span class="tag">Vanity</span>
-              <span class="tag">Painted finish</span>
-              <span class="tag">Home improvement</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="folders">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Best folder setup for your images</h2>
-          <p>This solves the duplicate-name problem and makes the site easy to manage later.</p>
         </div>
       </div>
+    </section>
 
-      <div class="folders">
-        <div class="folder-box">
-          <h3>Recommended structure</h3>
-          <pre class="code">/images/
-  /featured/
-    hero-kitchen.jpg
-
-  /projects/
-    /euro-kitchen-1/
-      cover.jpg
-      euro-kitchen-1-01.jpg
-      euro-kitchen-1-02.jpg
-      euro-kitchen-1-03.jpg
-
-    /china-blue-kitchen/
-      cover.jpg
-      china-blue-kitchen-01.jpg
-      china-blue-kitchen-02.jpg
-      china-blue-kitchen-03.jpg
-
-    /shaker-crown-kitchen/
-      cover.jpg
-      shaker-crown-kitchen-01.jpg
-      shaker-crown-kitchen-02.jpg
-
-    /lower-cabinets-pvc/
-      cover.jpg
-      lower-cabinets-pvc-01.jpg
-      lower-cabinets-pvc-02.jpg
-
-    /charcoal-grey-kitchen/
-      cover.jpg
-      charcoal-grey-kitchen-01.jpg
-      charcoal-grey-kitchen-02.jpg
-
-    /built-in-closet-white/
-      cover.jpg
-      built-in-closet-white-01.jpg
-      built-in-closet-white-02.jpg
-
-    /open-concept-closet/
-      cover.jpg
-      open-concept-closet-01.jpg
-      open-concept-closet-02.jpg
-
-    /walk-in-gloss-white/
-      cover.jpg
-      walk-in-gloss-white-01.jpg
-      walk-in-gloss-white-02.jpg
-
-    /walk-in-gun-metal/
-      cover.jpg
-      walk-in-gun-metal-01.jpg
-      walk-in-gun-metal-02.jpg
-
-    /euro-quartz-island/
-      cover.jpg
-      euro-quartz-island-01.jpg
-      euro-quartz-island-02.jpg
-      euro-quartz-island-03.jpg
-
-    /vanity-home-improvement/
-      cover.jpg
-      vanity-home-improvement-01.jpg
-      vanity-home-improvement-02.jpg
-      vanity-home-improvement-03.jpg</pre>
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Our Services</span>
+          <h2>Custom work for homes and everyday spaces</h2>
+          <p>Starting prices can vary depending on size, finish, material, and design details.</p>
         </div>
 
-        <div class="folder-box">
-          <h3>Naming rules</h3>
-          <pre class="code">Use lowercase only
-Use hyphens instead of spaces
-Never repeat a filename inside the same folder
-Use cover.jpg for the main project thumbnail
-Number all extra images like -01, -02, -03
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Custom Furniture</h3>
+            <p>Beds, tables, wardrobes, shelving, and made-to-order pieces for your home.</p>
+            <span class="price-tag">From $800+</span>
+          </article>
 
-Good:
-walk-in-gun-metal-01.jpg
+          <article class="service-card">
+            <h3>Cabinet Making</h3>
+            <p>Kitchen cabinets, storage cabinets, vanities, and built-in units.</p>
+            <span class="price-tag">From $1,500+</span>
+          </article>
 
-Bad:
-Walk In Closet Final (1).jpg</pre>
+          <article class="service-card">
+            <h3>Wood Carving</h3>
+            <p>Decorative work and custom carved details for unique finishing touches.</p>
+            <span class="price-tag">From $500+</span>
+          </article>
+
+          <article class="service-card">
+            <h3>Repairs & Restoration</h3>
+            <p>Fixing damaged furniture, refreshing old pieces, and restoring function.</p>
+            <span class="price-tag">From $300+</span>
+          </article>
+
+          <article class="service-card">
+            <h3>Closets & Storage</h3>
+            <p>Built-in closets, open-concept layouts, walk-ins, and smart storage solutions.</p>
+            <span class="price-tag">Custom pricing</span>
+          </article>
+
+          <article class="service-card">
+            <h3>Home Improvement</h3>
+            <p>Vanities, accent units, utility storage, and other custom interior solutions.</p>
+            <span class="price-tag">Custom pricing</span>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Contact section</h2>
-          <p>Replace the placeholders below with your real number, WhatsApp link, Facebook page, and email.</p>
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Gallery</span>
+          <h2>Recent projects</h2>
+          <p>
+            Replace these images anytime as you add more work. The titles below already match the folders you set up.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <img src="images/projects/euro-kitchen-1/cover.jpg" alt="Euro style kitchen cabinets" />
+            <div class="meta"><h3>Euro Style Kitchen Cabinets</h3><p>Timeless modern finish.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/china-blue-kitchen/cover.jpg" alt="China blue kitchen cabinets" />
+            <div class="meta"><h3>China Blue Kitchen</h3><p>Classic style with bold color.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/shaker-crown-kitchen/cover.jpg" alt="Shaker style kitchen with crown molding" />
+            <div class="meta"><h3>Shaker Style Kitchen</h3><p>With crown molding.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/lower-cabinets-pvc/cover.jpg" alt="Lower kitchen cabinets PVC board no handles" />
+            <div class="meta"><h3>Lower Kitchen Cabinets</h3><p>PVC board, no handles.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/charcoal-grey-kitchen/cover.jpg" alt="Custom made kitchen charcoal grey" />
+            <div class="meta"><h3>Custom Made Kitchen</h3><p>Charcoal grey finish.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/built-in-closet-white/cover.jpg" alt="Built in closet floor to ceiling" />
+            <div class="meta"><h3>Built-In Closet</h3><p>Floor-to-ceiling storage.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/open-concept-closet/cover.jpg" alt="Open concept closet floor to ceiling" />
+            <div class="meta"><h3>Open Concept Closet</h3><p>Clean open shelving layout.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/walk-in-gloss-white/cover.jpg" alt="Walk in closet gloss white" />
+            <div class="meta"><h3>Walk-In Closet</h3><p>Gloss white finish.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/walk-in-gun-metal/cover.jpg" alt="Walk in closet gun metal grey" />
+            <div class="meta"><h3>Walk-In Closet</h3><p>Gun metal grey finish.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/euro-quartz-island/cover.jpg" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" />
+            <div class="meta"><h3>Euro Quartz Island Kitchen</h3><p>Quartz countertop and waterfall island.</p></div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/projects/vanity-home-improvement/cover.jpg" alt="Vanity home improvement" />
+            <div class="meta"><h3>Vanity</h3><p>Home improvement project.</p></div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="contact-grid">
-        <div class="contact-box">
-          <h3>Get a Quote</h3>
-          <p>WhatsApp: +1 868 XXX XXXX<br />Email: yourname@email.com<br />Facebook/Instagram: @yourpage</p>
+    <section id="quote">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Get a Quote</span>
+          <h2>Tell us about your project</h2>
+          <p>
+            This form is ready for now as a visual section. When you're ready later, I can connect it to email or Formspree.
+          </p>
         </div>
-        <div class="contact-box">
-          <h3>What customers should send</h3>
-          <p>Measurements, photos of the space, style reference, preferred color, material type, and deadline.</p>
+
+        <div class="quote-wrap">
+          <div class="card">
+            <h3 style="margin-top:0;">Fastest way to reach us</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/18683509332" target="_blank" rel="noopener">Message us instantly</a>
+              </div>
+              <div class="contact-item">
+                <strong>Phone</strong>
+                <a href="tel:+18683509332">(868) 350-9332</a>
+              </div>
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:wallywoodworkingandhomedesign@gmail.com">wallywoodworkingandhomedesign@gmail.com</a>
+              </div>
+            </div>
+            <p class="note">For now, the quote button can send people to WhatsApp or email while you finish setting everything up.</p>
+          </div>
+
+          <div class="card">
+            <form>
+              <div>
+                <label>Full Name
+                  <input type="text" placeholder="Your full name" />
+                </label>
+              </div>
+
+              <div>
+                <label>Email
+                  <input type="email" placeholder="your@email.com" />
+                </label>
+              </div>
+
+              <div>
+                <label>Phone Number
+                  <input type="text" placeholder="868-000-0000" />
+                </label>
+              </div>
+
+              <div>
+                <label>Service Needed
+                  <select>
+                    <option>Custom Furniture</option>
+                    <option>Cabinet Making</option>
+                    <option>Wood Carving</option>
+                    <option>Repairs & Restoration</option>
+                    <option>Closets & Storage</option>
+                    <option>Home Improvement</option>
+                  </select>
+                </label>
+              </div>
+
+              <div>
+                <label>Describe your project
+                  <textarea placeholder="Tell us what you want built, the size, style, and any details you have in mind."></textarea>
+                </label>
+              </div>
+
+              <div class="btn-row">
+                <a class="btn btn-primary" href="https://wa.me/18683509332" target="_blank" rel="noopener">Send on WhatsApp</a>
+                <a class="btn btn-secondary" href="mailto:wallywoodworkingandhomedesign@gmail.com">Send by Email</a>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Contact</span>
+          <h2>Let’s build something great</h2>
+          <p>Reach out for custom work, repairs, pricing, or to ask questions about your project.</p>
+        </div>
+
+        <div class="quote-wrap">
+          <div class="card">
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Phone</strong>
+                <a href="tel:+18683509332">(868) 350-9332</a>
+              </div>
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:wallywoodworkingandhomedesign@gmail.com">wallywoodworkingandhomedesign@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <strong>Location</strong>
+                <span>Saut D’eau Road, Maraval, Trinidad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Prefer WhatsApp?</h3>
+            <p>
+              Tap the button below to start a chat instantly. This is the easiest option for sending pictures,
+              measurements, and ideas for your project.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/18683509332" target="_blank" rel="noopener">Message us on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="container">Custom Cabinets & Closets • Built for kitchens, closets, vanities, and storage upgrades.</div>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Wally Woodworking. All rights reserved.</div>
+      <div>Custom woodwork • Cabinets • Closets • Vanities • Repairs</div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
