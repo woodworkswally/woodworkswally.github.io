@@ -104,50 +104,97 @@
     .nav-links a:hover { color: var(--accent); }
 
     .hero {
-      background:
-        linear-gradient(rgba(10,12,16,.72), rgba(10,12,16,.72)),
-        url('images/featured/hero-kitchen.jpg') center/cover no-repeat;
+      background: radial-gradient(circle at top, rgba(34,60,107,.22), transparent 35%), linear-gradient(180deg, #070a11 0%, #0d121c 100%);
       color: var(--white);
     }
 
     .hero-inner {
-      padding: 90px 0 84px;
+      padding: 56px 0 40px;
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 28px;
+      grid-template-columns: 1.35fr .9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-panel,
+    .hero-image-panel {
+      background: linear-gradient(180deg, rgba(20,25,36,.96), rgba(11,15,24,.98));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.28);
+    }
+
+    .hero-copy {
+      padding: 30px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
       align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #f3f6fb;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      margin-bottom: 18px;
     }
 
     .hero-copy h1 {
       margin: 0 0 16px;
-      font-size: clamp(2rem, 4vw, 4rem);
-      line-height: 1.05;
-      max-width: 10ch;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      line-height: .96;
+      letter-spacing: -.04em;
+      max-width: 8.5ch;
     }
 
     .hero-copy p {
       margin: 0 0 24px;
-      color: #d9e0ea;
-      max-width: 62ch;
-      font-size: 1.04rem;
+      color: #d8e0eb;
+      max-width: 60ch;
+      font-size: 1.06rem;
     }
 
-    .hero-card {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
     }
 
-    .hero-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
+    .hero-mini-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
     }
 
-    .hero-card p {
-      margin: 0 0 18px;
-      color: #dde4ee;
+    .hero-mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    .hero-mini-card p {
+      margin: 0;
+      color: #d1d8e3;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+
+    .hero-image-panel {
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .hero-image-panel img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .btn-row {
@@ -401,6 +448,16 @@
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .hero-mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 680px) {
@@ -421,45 +478,16 @@
       }
 
       .hero-inner {
-        padding: 72px 0 64px;
-      }
-    }
-
-      .nav-links {
-        gap: 14px;
+        padding: 34px 0 28px;
       }
 
-      .services-grid,
-      .gallery-grid,
-      .stats {
-        grid-template-columns: 1fr;
+      .hero-copy {
+        padding: 22px;
       }
 
-      .hero-inner {
-        padding: 72px 0 64px;
-      }
-
-      .lightbox-top {
-        grid-template-columns: 1fr;
-      }
-
-      .lightbox-main-image {
-        max-height: 46vh;
-      }
-    }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .services-grid,
-      .gallery-grid,
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-inner {
-        padding: 72px 0 64px;
+      .hero-copy h1 {
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        max-width: 10ch;
       }
     }
   </style>
@@ -488,28 +516,37 @@
   <main>
     <section class="hero" id="home">
       <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Quality custom woodwork in Trinidad</h1>
+        <div class="hero-copy hero-panel">
+          <span class="hero-badge">CUSTOM CABINETS • CLOSETS • VANITIES</span>
+          <h1>Clean custom work for kitchens, closets, and home upgrades.</h1>
           <p>
-            Custom kitchens, closets, vanities, cabinets, furniture, and repairs made to fit your space,
-            your style, and your budget.
+            Modern euro-style kitchens, shaker cabinets, walk-in closets, built-in wardrobes,
+            and vanity units made to fit your space. Clean finishes, smart storage,
+            and custom work built to last.
           </p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="#quote">Request a Quote</a>
-            <a class="btn btn-secondary" href="#gallery">View Our Work</a>
+            <a class="btn btn-primary" href="#gallery">View Projects</a>
+            <a class="btn btn-secondary" href="#quote">Get a Quote</a>
+          </div>
+
+          <div class="hero-mini-grid">
+            <article class="hero-mini-card">
+              <h3>Kitchens</h3>
+              <p>Shaker, euro-style, quartz tops, waterfall islands, and custom layouts.</p>
+            </article>
+            <article class="hero-mini-card">
+              <h3>Closets</h3>
+              <p>Built-in wardrobes, walk-ins, floor-to-ceiling storage, drawers, and shelving.</p>
+            </article>
+            <article class="hero-mini-card">
+              <h3>Finishes</h3>
+              <p>Gloss white, gun metal grey, charcoal, china blue, and modern custom colors.</p>
+            </article>
           </div>
         </div>
 
-        <div class="hero-card">
-          <h3>Built with care. Made to last.</h3>
-          <p>
-            Over 20 years of woodworking experience with a strong focus on quality finishes,
-            practical storage, and customer satisfaction.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://wa.me/18683509332" target="_blank" rel="noopener">WhatsApp Us</a>
-            <a class="btn btn-secondary" href="mailto:wallywoodworkingandhomedesign@gmail.com">Email Us</a>
-          </div>
+        <div class="hero-image-panel">
+          <img src="images/featured/hero-kitchen.jpg" alt="Featured Wally Woodworking kitchen project" />
         </div>
       </div>
     </section>
@@ -614,7 +651,7 @@
           <span class="eyebrow">Gallery</span>
           <h2>Recent projects</h2>
           <p>
-            Replace these images anytime as you add more work. The titles below already match the folders you set up.
+            Browse some of our completed kitchen, closet, vanity, and custom woodworking projects.
           </p>
         </div>
 
@@ -708,9 +745,7 @@
           </article>
         </div>
       </div>
-        <div class="thumb-strip" id="thumbStrip"></div>
-      </div>
-    </div>
+    </section>
 
     <section id="quote">
       <div class="container">
@@ -718,7 +753,7 @@
           <span class="eyebrow">Get a Quote</span>
           <h2>Tell us about your project</h2>
           <p>
-            This form is ready for now as a visual section. When you're ready later, I can connect it to email or Formspree.
+            Send us your project details, measurements, photos, or ideas and we’ll get back to you with a quote.
           </p>
         </div>
 
@@ -739,7 +774,7 @@
                 <a href="mailto:wallywoodworkingandhomedesign@gmail.com">wallywoodworkingandhomedesign@gmail.com</a>
               </div>
             </div>
-            <p class="note">For now, the quote button can send people to WhatsApp or email while you finish setting everything up.</p>
+            <p class="note">For faster service, send photos of your space, rough measurements, and the style you want.</p>
           </div>
 
           <div class="card">
