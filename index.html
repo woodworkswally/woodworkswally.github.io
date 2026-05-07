@@ -8,13 +8,11 @@
     :root {
       --bg: #0f1115;
       --panel: #171a21;
-      --panel-2: #1f2430;
       --text: #f5f7fb;
       --muted: #b8c0cc;
       --line: #2a3140;
       --accent: #d9e3f0;
       --orange: #f28c28;
-      --orange-dark: #c86b14;
       --shadow: 0 10px 30px rgba(0,0,0,.25);
       --radius: 22px;
       --max: 1200px;
@@ -147,9 +145,7 @@
       box-shadow: var(--shadow);
     }
 
-    .hero-copy {
-      padding: 34px;
-    }
+    .hero-copy { padding: 34px; }
 
     .eyebrow {
       display: inline-block;
@@ -223,9 +219,7 @@
       min-height: 420px;
     }
 
-    section {
-      padding: 28px 0 54px;
-    }
+    section { padding: 28px 0 54px; }
 
     .section-head {
       display: flex;
@@ -251,9 +245,7 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .card {
-      padding: 22px;
-    }
+    .card { padding: 22px; }
 
     .card h3 {
       font-size: 1.1rem;
@@ -284,9 +276,7 @@
       gap: 20px;
     }
 
-    .gallery-card {
-      overflow: hidden;
-    }
+    .gallery-card { overflow: hidden; }
 
     .gallery-card .thumb {
       aspect-ratio: 16 / 10;
@@ -304,9 +294,7 @@
       transform: scale(1.04);
     }
 
-    .gallery-body {
-      padding: 20px;
-    }
+    .gallery-body { padding: 20px; }
 
     .gallery-body h3 {
       margin-bottom: 8px;
@@ -369,7 +357,10 @@
     input::placeholder,
     textarea::placeholder { color: #8f9aab; }
 
-    textarea { min-height: 130px; resize: vertical; }
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
 
     select option { color: #111; }
 
@@ -423,16 +414,18 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#home">
-        <img src="images/logo/wally-logo.jpeg" alt="Wally Woodworking Logo" />
+        <img src="Images/Logo/wally-logo.jpeg" alt="Wally Woodworking Logo" />
         <div>
           Wally Woodworking
           <span>Quality Custom Woodwork in Trinidad</span>
         </div>
       </a>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -448,21 +441,34 @@
       <div class="hero-copy">
         <div class="eyebrow">Custom cabinets • closets • vanities</div>
         <h1>Clean custom work for kitchens, closets, and home upgrades.</h1>
+
         <p class="lead">
           Wally Woodworking creates custom kitchens, closets, vanities, cabinets, furniture, and repairs made to fit your space, style, and budget.
         </p>
+
         <div class="hero-actions">
           <a class="btn orange" href="#gallery">View Projects</a>
           <a class="btn secondary" href="#quote">Get a Quote</a>
         </div>
+
         <div class="stats">
-          <div class="stat"><strong>Kitchens</strong><span>Shaker, frameless, euro-style, quartz tops, waterfall islands</span></div>
-          <div class="stat"><strong>Closets</strong><span>Built-in wardrobes, walk-ins, floor-to-ceiling storage</span></div>
-          <div class="stat"><strong>Finishes</strong><span>Gloss white, gun metal grey, charcoal, china blue, and more</span></div>
+          <div class="stat">
+            <strong>Kitchens</strong>
+            <span>Shaker, frameless, euro-style, quartz tops, waterfall islands</span>
+          </div>
+          <div class="stat">
+            <strong>Closets</strong>
+            <span>Built-in wardrobes, walk-ins, floor-to-ceiling storage</span>
+          </div>
+          <div class="stat">
+            <strong>Finishes</strong>
+            <span>Gloss white, gun metal grey, charcoal, china blue, and more</span>
+          </div>
         </div>
       </div>
+
       <div class="hero-card">
-        <img src="images/featured/hero-kitchen.png" alt="Featured Wally Woodworking kitchen project" />
+        <img src="Images/featured/hero-kitchen.png" alt="Featured Wally Woodworking kitchen project" />
       </div>
     </div>
   </header>
@@ -472,9 +478,12 @@
       <div class="section-head">
         <div>
           <h2>About Us</h2>
-          <p>Wally Woodworking has been a trusted name in the woodworking industry for over 20 years, delivering exceptional craftsmanship and turning dreams into reality.</p>
+          <p>
+            Wally Woodworking has been a trusted name in the woodworking industry for over 20 years, delivering exceptional craftsmanship and turning dreams into reality.
+          </p>
         </div>
       </div>
+
       <div class="card">
         <p>
           With a steadfast commitment to excellence, we specialize in designing and creating custom-made furniture, cabinetry, closets, vanities, and repair services across Trinidad and Tobago. Each piece is tailored to reflect the unique vision and needs of our customers.
@@ -494,13 +503,43 @@
           <p>Starting prices can vary depending on size, finish, material, and design details.</p>
         </div>
       </div>
+
       <div class="services">
-        <div class="card"><h3>Custom Furniture</h3><p>Beds, tables, wardrobes, shelving, and made-to-order pieces.</p><span class="price-tag">From $800+</span></div>
-        <div class="card"><h3>Cabinet Making</h3><p>Kitchen cabinets, storage cabinets, vanities, and built-in units.</p><span class="price-tag">From $1,500+</span></div>
-        <div class="card"><h3>Wood Carving</h3><p>Decorative work and custom carved details for unique finishing touches.</p><span class="price-tag">From $500+</span></div>
-        <div class="card"><h3>Repairs & Restoration</h3><p>Fixing damaged furniture, refreshing old pieces, and restoring function.</p><span class="price-tag">From $300+</span></div>
-        <div class="card"><h3>Closets & Storage</h3><p>Built-in closets, open-concept layouts, walk-ins, and smart storage solutions.</p><span class="price-tag">Custom pricing</span></div>
-        <div class="card"><h3>Home Improvement</h3><p>Vanities, accent units, utility storage, and other custom interior solutions.</p><span class="price-tag">Custom pricing</span></div>
+        <div class="card">
+          <h3>Custom Furniture</h3>
+          <p>Beds, tables, wardrobes, shelving, and made-to-order pieces.</p>
+          <span class="price-tag">From $800+</span>
+        </div>
+
+        <div class="card">
+          <h3>Cabinet Making</h3>
+          <p>Kitchen cabinets, storage cabinets, vanities, and built-in units.</p>
+          <span class="price-tag">From $1,500+</span>
+        </div>
+
+        <div class="card">
+          <h3>Wood Carving</h3>
+          <p>Decorative work and custom carved details for unique finishing touches.</p>
+          <span class="price-tag">From $500+</span>
+        </div>
+
+        <div class="card">
+          <h3>Repairs & Restoration</h3>
+          <p>Fixing damaged furniture, refreshing old pieces, and restoring function.</p>
+          <span class="price-tag">From $300+</span>
+        </div>
+
+        <div class="card">
+          <h3>Closets & Storage</h3>
+          <p>Built-in closets, open-concept layouts, walk-ins, and smart storage solutions.</p>
+          <span class="price-tag">Custom pricing</span>
+        </div>
+
+        <div class="card">
+          <h3>Home Improvement</h3>
+          <p>Vanities, accent units, utility storage, and other custom interior solutions.</p>
+          <span class="price-tag">Custom pricing</span>
+        </div>
       </div>
     </div>
   </section>
@@ -516,110 +555,182 @@
 
       <div class="projects">
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/frameless-euro-kitchen/cover.png" alt="Frameless push to open European kitchen design" /></div>
+          <div class="thumb">
+            <img src="Images/projects/frameless-euro-kitchen/cover.png" alt="Frameless push to open European kitchen design" />
+          </div>
           <div class="gallery-body">
             <h3>Frameless European Kitchen</h3>
             <p>Push-to-open frameless European design with clean modern lines.</p>
-            <div class="tags"><span class="tag">Frameless</span><span class="tag">Push to open</span><span class="tag">European design</span></div>
+            <div class="tags">
+              <span class="tag">Frameless</span>
+              <span class="tag">Push to open</span>
+              <span class="tag">European design</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/euro-timeless-kitchen/cover.png" alt="European style cabinets timeless design" /></div>
+          <div class="thumb">
+            <img src="Images/projects/euro-timeless-kitchen/cover.png" alt="European style cabinets timeless design" />
+          </div>
           <div class="gallery-body">
             <h3>European Style Cabinets</h3>
             <p>Timeless European-style cabinetry with a clean, high-end finish.</p>
-            <div class="tags"><span class="tag">Euro style</span><span class="tag">Timeless</span><span class="tag">Kitchen</span></div>
+            <div class="tags">
+              <span class="tag">Euro style</span>
+              <span class="tag">Timeless</span>
+              <span class="tag">Kitchen</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/china-blue-kitchen/cover.png" alt="China blue kitchen cabinets" /></div>
+          <div class="thumb">
+            <img src="Images/projects/china-blue-kitchen/cover.png" alt="China blue kitchen cabinets" />
+          </div>
           <div class="gallery-body">
             <h3>China Blue Kitchen</h3>
             <p>Classic cabinet doors with bold blue finish and silver hardware.</p>
-            <div class="tags"><span class="tag">China blue</span><span class="tag">Shaker doors</span><span class="tag">Custom made</span></div>
+            <div class="tags">
+              <span class="tag">China blue</span>
+              <span class="tag">Shaker doors</span>
+              <span class="tag">Custom made</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/shaker-crown-kitchen/cover.png" alt="Shaker style kitchen with crown molding" /></div>
+          <div class="thumb">
+            <img src="Images/projects/shaker-crown-kitchen/cover.png" alt="Shaker style kitchen with crown molding" />
+          </div>
           <div class="gallery-body">
             <h3>Shaker Kitchen with Crown Molding</h3>
             <p>Shaker style cabinetry finished with crown molding and practical storage.</p>
-            <div class="tags"><span class="tag">Shaker style</span><span class="tag">Crown molding</span><span class="tag">Kitchen</span></div>
+            <div class="tags">
+              <span class="tag">Shaker style</span>
+              <span class="tag">Crown molding</span>
+              <span class="tag">Kitchen</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/lower-cabinets-pvc/cover.png" alt="Lower kitchen cabinets with no handles" /></div>
+          <div class="thumb">
+            <img src="Images/projects/lower-cabinets-pvc/cover.png" alt="Lower kitchen cabinets with no handles" />
+          </div>
           <div class="gallery-body">
             <h3>Lower Kitchen Cabinets</h3>
             <p>PVC board lower units with no handles for a sleek, minimal finish.</p>
-            <div class="tags"><span class="tag">PVC board</span><span class="tag">No handles</span><span class="tag">Modern</span></div>
+            <div class="tags">
+              <span class="tag">PVC board</span>
+              <span class="tag">No handles</span>
+              <span class="tag">Modern</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/charcoal-grey-kitchen/cover.png" alt="Charcoal grey custom kitchen" /></div>
+          <div class="thumb">
+            <img src="Images/projects/charcoal-grey-kitchen/cover.png" alt="Charcoal grey custom kitchen" />
+          </div>
           <div class="gallery-body">
             <h3>Custom Kitchen in Charcoal Grey</h3>
             <p>Dark counters paired with custom charcoal grey cabinetry in an L-shaped layout.</p>
-            <div class="tags"><span class="tag">Charcoal grey</span><span class="tag">Custom kitchen</span><span class="tag">L-shape</span></div>
+            <div class="tags">
+              <span class="tag">Charcoal grey</span>
+              <span class="tag">Custom kitchen</span>
+              <span class="tag">L-shape</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/euro-quartz-island/cover.png" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" /></div>
+          <div class="thumb">
+            <img src="Images/projects/euro-quartz-island/cover.png" alt="Euro style kitchen cabinets with quartz countertop and waterfall island" />
+          </div>
           <div class="gallery-body">
             <h3>Euro Kitchen with Waterfall Island</h3>
             <p>Benjamin Moore satin paint, quartz counters, waterfall island, and soft neutral palette.</p>
-            <div class="tags"><span class="tag">Quartz countertop</span><span class="tag">Waterfall island</span><span class="tag">Benjamin Moore satin</span></div>
+            <div class="tags">
+              <span class="tag">Quartz countertop</span>
+              <span class="tag">Waterfall island</span>
+              <span class="tag">Benjamin Moore satin</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/built-in-closet-white/cover.png" alt="Built in closet floor to ceiling" /></div>
+          <div class="thumb">
+            <img src="Images/projects/built-in-closet-white/cover.png" alt="Built in closet floor to ceiling" />
+          </div>
           <div class="gallery-body">
             <h3>Built-In Closet</h3>
             <p>Floor-to-ceiling white built-in with clean slab doors and black hardware.</p>
-            <div class="tags"><span class="tag">Built-in closet</span><span class="tag">Floor to ceiling</span><span class="tag">White finish</span></div>
+            <div class="tags">
+              <span class="tag">Built-in closet</span>
+              <span class="tag">Floor to ceiling</span>
+              <span class="tag">White finish</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/open-concept-closet/cover.png" alt="Open concept closet floor to ceiling" /></div>
+          <div class="thumb">
+            <img src="Images/projects/open-concept-closet/cover.png" alt="Open concept closet floor to ceiling" />
+          </div>
           <div class="gallery-body">
             <h3>Open Concept Closet</h3>
             <p>Open storage system with hanging sections, cubbies, and top storage.</p>
-            <div class="tags"><span class="tag">Open concept</span><span class="tag">Closet</span><span class="tag">Floor to ceiling</span></div>
+            <div class="tags">
+              <span class="tag">Open concept</span>
+              <span class="tag">Closet</span>
+              <span class="tag">Floor to ceiling</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/walk-in-gloss-white/cover.png" alt="Walk in closet Sherwin Williams gloss white" /></div>
+          <div class="thumb">
+            <img src="Images/projects/walk-in-gloss-white/cover.png" alt="Walk in closet Sherwin Williams gloss white" />
+          </div>
           <div class="gallery-body">
             <h3>Walk-In Closet — Gloss White</h3>
             <p>Bright walk-in design in Sherwin Williams gloss white with shelving and drawer sections.</p>
-            <div class="tags"><span class="tag">Walk-in closet</span><span class="tag">Gloss white</span><span class="tag">Premium finish</span></div>
+            <div class="tags">
+              <span class="tag">Walk-in closet</span>
+              <span class="tag">Gloss white</span>
+              <span class="tag">Premium finish</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/walk-in-gun-metal/cover.png" alt="Walk in closet gun metal grey" /></div>
+          <div class="thumb">
+            <img src="Images/projects/walk-in-gun-metal/cover.png" alt="Walk in closet gun metal grey" />
+          </div>
           <div class="gallery-body">
             <h3>Walk-In Closet — Gun Metal Grey</h3>
             <p>Dark modern walk-in with shelving, drawers, and open hanging sections.</p>
-            <div class="tags"><span class="tag">Gun metal grey</span><span class="tag">Walk-in closet</span><span class="tag">Modern</span></div>
+            <div class="tags">
+              <span class="tag">Gun metal grey</span>
+              <span class="tag">Walk-in closet</span>
+              <span class="tag">Modern</span>
+            </div>
           </div>
         </article>
 
         <article class="gallery-card">
-          <div class="thumb"><img src="images/projects/vanity-home-improvement/cover.png" alt="Vanity home improvement" /></div>
+          <div class="thumb">
+            <img src="Images/projects/vanity-home-improvement/cover.png" alt="Vanity home improvement" />
+          </div>
           <div class="gallery-body">
             <h3>Vanity / Home Improvement</h3>
             <p>Compact painted vanity unit showing the build process and finished door style.</p>
-            <div class="tags"><span class="tag">Vanity</span><span class="tag">Painted finish</span><span class="tag">Home improvement</span></div>
+            <div class="tags">
+              <span class="tag">Vanity</span>
+              <span class="tag">Painted finish</span>
+              <span class="tag">Home improvement</span>
+            </div>
           </div>
         </article>
       </div>
@@ -634,6 +745,7 @@
           <p>Send us your project details, measurements, photos, or ideas and we’ll get back to you with a quote.</p>
         </div>
       </div>
+
       <div class="quote-grid">
         <div class="quote-box">
           <h3>Fastest way to reach us</h3>
@@ -643,6 +755,7 @@
             <a class="btn secondary" href="mailto:wallywoodworkingandhomedesign@gmail.com">Send by Email</a>
           </div>
         </div>
+
         <div class="quote-box">
           <form action="https://formsubmit.co/wallywoodworkingandhomedesign@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Full Name" required />
@@ -672,6 +785,7 @@
           <p>Reach out for custom work, repairs, pricing, or to ask questions about your project.</p>
         </div>
       </div>
+
       <div class="contact-grid">
         <div class="contact-box">
           <h3>Contact Information</h3>
@@ -681,6 +795,7 @@
             <span><strong>Location:</strong> Saut D’eau Road, Maraval, Trinidad</span>
           </div>
         </div>
+
         <div class="contact-box">
           <h3>Message Us on WhatsApp</h3>
           <p>Tap below to start a chat instantly. You can send pictures, measurements, and ideas for your project.</p>
@@ -693,7 +808,9 @@
   </section>
 
   <footer class="footer">
-    <div class="container">© 2026 Wally Woodworking • Custom woodwork • Cabinets • Closets • Vanities • Repairs</div>
+    <div class="container">
+      © 2026 Wally Woodworking • Custom woodwork • Cabinets • Closets • Vanities • Repairs
+    </div>
   </footer>
 </body>
 </html>
